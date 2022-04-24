@@ -1,0 +1,3 @@
+[submodule "UiEngine/vendor/GLFW"]
+	path = UiEngine/vendor/GLFW
+	url = https://github.com/220N334/glfw
