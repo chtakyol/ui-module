@@ -37,12 +37,14 @@ void UiEngine::Application::Init()
 
     glfwMakeContextCurrent(window);
 
-    // Setup Dear ImGui context
-    const char* glsl_version = "#version 130";
-    IMGUI_CHECKVERSION();
+    const char* glsl_version = "#version 330";
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
     ImGui::StyleColorsDark();
+
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls
+
+
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 }
