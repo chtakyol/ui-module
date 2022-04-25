@@ -14,8 +14,10 @@ UiEngine::Application::~Application()
 
 void UiEngine::Application::Run()
 {
+    bool show_demo_window = true;
 	while (!glfwWindowShouldClose(window))
 	{
+        ImGui::ShowDemoWindow(&show_demo_window);
         glfwSwapBuffers(window);
         glfwPollEvents();
 	}
@@ -34,6 +36,15 @@ void UiEngine::Application::Init()
     }
 
     glfwMakeContextCurrent(window);
+
+    // Setup Dear ImGui context
+    const char* glsl_version = "#version 130";
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGui::StyleColorsDark();
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init(glsl_version);
 }
 
 void UiEngine::Application::ShutDown()

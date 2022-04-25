@@ -1,3 +1,6 @@
 [submodule "UiEngine/vendor/GLFW"]
 	path = UiEngine/vendor/GLFW
 	url = https://github.com/220N334/glfw
+[submodule "UiEngine/vendor/imgui"]
+	path = UiEngine/vendor/imgui
+	url = https://github.com/220N334/imgui.git
