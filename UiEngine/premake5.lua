@@ -23,14 +23,13 @@ project "UiEngine"
 	{
 		"src",
 		"vendor/glfw/include",
-		"vendor/ImGui",
-		"vendor/ImGui/backends"
+		"%{IncludeDir.imgui}"
 	}
 
 	links
 	{
 		"GLFW",
-		"ImGui",
+		"imgui",
         "opengl32.lib"
 	}
 
