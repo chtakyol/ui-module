@@ -30,13 +30,17 @@ project "UiEngine"
 	{
 		"GLFW",
 		"imgui",
-        "opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+
+		links
+		{
+			"opengl32.lib"
+		}
 
 		defines
 		{
@@ -53,6 +57,11 @@ project "UiEngine"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+
+		defines
+		{
+			"UI_PLATFORM_LINUX"
+		}
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"

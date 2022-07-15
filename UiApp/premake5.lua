@@ -34,7 +34,7 @@ project "UiApp"
 
 	filter "system:linux"
         links { "dl", "pthread" }
-        defines { "_X11" }
+        defines { "_X11", "UI_PLATFORM_LINUX" }
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
