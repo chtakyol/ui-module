@@ -32,6 +32,10 @@ project "UiApp"
 			"UI_PLATFORM_WINDOWS"
 		}
 
+	filter "system:linux"
+        links { "dl", "pthread" }
+        defines { "_X11" }
+
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		symbols "On"

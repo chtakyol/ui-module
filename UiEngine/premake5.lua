@@ -49,6 +49,11 @@ project "UiEngine"
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/UiApp")
 		}
 
+	filter "system:linux"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
 		runtime "Debug"
