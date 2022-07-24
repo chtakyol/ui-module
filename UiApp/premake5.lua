@@ -33,12 +33,11 @@ project "UiApp"
 		}
 
 	filter "system:linux"
-		architecture "ARM"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
 
-        links { "dl", "pthread" }
+        links { "GLFW", "Xrandr", "Xi", "GLU", "GL", "X11", "dl", "pthread", "stdc++fs" }
         defines { "_X11", "UI_PLATFORM_LINUX" }
 
 	filter "configurations:Debug"
