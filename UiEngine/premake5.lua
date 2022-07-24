@@ -57,6 +57,7 @@ project "UiEngine"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+		architecture "ARM"
 
 		defines
 		{
@@ -64,11 +65,11 @@ project "UiEngine"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "UI_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "UI_RELEASE"
 		runtime "Release"
 		optimize "on"
