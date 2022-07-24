@@ -14,7 +14,7 @@ namespace UiEngine
 	}
 }
 #elif UI_PLATFORM_LINUX
-namespace Teapot
+namespace UiEngine
 {
 	Window* Window::Create(const WindowProps& props)
 	{

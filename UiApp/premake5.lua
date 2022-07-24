@@ -33,7 +33,6 @@ project "UiApp"
 		}
 
 	filter "system:linux"
-		architecture "ARM"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"

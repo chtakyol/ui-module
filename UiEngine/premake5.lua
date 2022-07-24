@@ -51,7 +51,6 @@ project "UiEngine"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
-		architecture "ARM"
 
 		links 
 		{
