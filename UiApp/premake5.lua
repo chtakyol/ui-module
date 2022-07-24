@@ -32,10 +32,19 @@ project "UiApp"
 			"UI_PLATFORM_WINDOWS"
 		}
 
+	filter "system:linux"
+		architecture "ARM"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
+        links { "dl", "pthread" }
+        defines { "_X11", "UI_PLATFORM_LINUX" }
+
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "UI_DEBUG"
 		symbols "On"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "UI_RELEASE"
 		optimize "On"
