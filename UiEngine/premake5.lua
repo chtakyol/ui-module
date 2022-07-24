@@ -13,16 +13,10 @@ project "UiEngine"
 		"src/**.cpp",
 	}
 
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE"
-	}
-
 	includedirs
 	{
 		"src",
-		"vendor/glfw/include",
+		"vendor/GLFW/include",
 		"%{IncludeDir.imgui}"
 	}
 
@@ -58,6 +52,11 @@ project "UiEngine"
 		staticruntime "On"
 		systemversion "latest"
 		architecture "ARM"
+
+		links 
+		{
+			"dl", "pthread" 
+		}
 
 		defines
 		{

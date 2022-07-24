@@ -1,14 +1,25 @@
 #pragma once
 
-// #ifdef UI_PLATFORM_WINDOWS
+#include "UiEngine/Window.h"
+#include "Platform/Windows/WindowsWindow.h"
+#include "Platform/Linux/LinuxWindow.h"
 
-extern UiEngine::Application* UiEngine::CreateApplication();
-
-int main(int argc, char** argv)
+#ifdef UI_PLATFORM_WINDOWS
+namespace UiEngine
 {
-	auto app = UiEngine::CreateApplication();
-	app->Run();
-	delete app;
+	Window* Window::Create(const WindowProps& props)
+	{
+		std::cout << "Windows" << std::endl;
+		return new WindowsWindow(props);
+	}
 }
-
-// #endif
+#elif UI_PLATFORM_LINUX
+namespace Teapot
+{
+	Window* Window::Create(const WindowProps& props)
+	{
+		std::cout << "Linux" << std::endl;
+		return new LinuxWindow(props);
+	}
+}
+#endif

@@ -1,35 +1,30 @@
 #pragma once
 
-#include "Core.h"
-
+#include <iostream>
 #include <string>
 #include <GLFW/glfw3.h>
-#include <iostream>
+#include <memory>
+
+#include "Core.h"
+#include "Window.h"
 
 namespace UiEngine
 {
-    struct UiSpecs
-    {
-        std::string Name = "Ui Window";
-        uint32_t Width = 1600;
-        uint32_t Height = 900;
-    };
-
     class UI_API Application
     {
     public:
-        Application(const UiSpecs& uiSpecs);
+        Application();
         virtual ~Application();
+        virtual void OnUpdate() = 0;
         void Run();
+        Window& GetWindow() { return *m_Window; }
 
     private:
         void Init();
         void ShutDown();
 
     private:
-        UiSpecs m_UiSpecs;
-        //GLFWwindow* window;
+        std::unique_ptr<Window> m_Window;
+        bool m_Running = true;
     };
-
-    Application* CreateApplication();
 }
