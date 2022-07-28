@@ -15,7 +15,7 @@ public:
 
     void OnUpdate() override
     {
-        std::cout << "Loop" << std::endl;
+        //std::cout << "Loop" << std::endl;
     }
 };
 
