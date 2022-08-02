@@ -1,5 +1,4 @@
 workspace "UiModule"
-	architecture "x86_64"
 	startproject "UiApp"
 
 	configurations

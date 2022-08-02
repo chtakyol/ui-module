@@ -1,28 +1,28 @@
 #include "UiEngine.h"
 
-#include <iostream>
-
-
-//class UiApp : public UiEngine::Application
-//{
-//public:
-//    UiApp()
-//    {
-//        std::cout << "Hello From App" << std::endl;
-//
-//    }
-//
-//    ~UiApp()
-//    {
-//
-//    }
-//
-//};
-
-UiEngine::Application* UiEngine::CreateApplication()
+class UiApp : public UiEngine::Application
 {
-    UiEngine::UiSpecs spec;
+public:
+    UiApp()
+    {
+        std::cout << "Hello From App" << std::endl;
+    }
 
-    UiEngine::Application* app = new UiEngine::Application(spec);
-    return app;
+    ~UiApp()
+    {
+
+    }
+
+    void OnUpdate() override
+    {
+        //std::cout << "Loop" << std::endl;
+    }
+};
+
+int main()
+{
+    UiApp* ui = new UiApp();
+    ui->Run();
+    ui->OnUpdate();
+    delete(ui);
 }

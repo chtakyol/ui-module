@@ -13,16 +13,10 @@ project "UiEngine"
 		"src/**.cpp",
 	}
 
-	defines
-	{
-		"_CRT_SECURE_NO_WARNINGS",
-		"GLFW_INCLUDE_NONE"
-	}
-
 	includedirs
 	{
 		"src",
-		"vendor/glfw/include",
+		"vendor/GLFW/include",
 		"%{IncludeDir.imgui}"
 	}
 
@@ -30,13 +24,17 @@ project "UiEngine"
 	{
 		"GLFW",
 		"imgui",
-        "opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "latest"
+
+		links
+		{
+			"opengl32.lib"
+		}
 
 		defines
 		{
@@ -49,12 +47,27 @@ project "UiEngine"
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/UiApp")
 		}
 
+	filter "system:linux"
+		cppdialect "C++17"
+		staticruntime "On"
+		systemversion "latest"
+
+		links 
+		{
+			"dl", "pthread" 
+		}
+
+		defines
+		{
+			"UI_PLATFORM_LINUX"
+		}
+
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "UI_DEBUG"
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "UI_RELEASE"
 		runtime "Release"
 		optimize "on"
