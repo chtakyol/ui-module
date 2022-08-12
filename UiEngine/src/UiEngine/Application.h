@@ -7,20 +7,21 @@
 
 #include "Core.h"
 #include "Window.h"
+#include "imgui.h"
 
 namespace UiEngine
 {
     class UI_API Application
     {
     public:
-        Application();
+        Application(const WindowProps& props);
         virtual ~Application();
         virtual void OnUpdate() = 0;
         void Run();
         Window& GetWindow() { return *m_Window; }
 
     private:
-        void Init();
+        void Init(const WindowProps& props);
         void ShutDown();
 
     private:

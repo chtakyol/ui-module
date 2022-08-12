@@ -3,9 +3,9 @@
 
 namespace UiEngine
 {
-	Application::Application()
+	Application::Application(const WindowProps& props)
 	{
-		Init();
+		Init(props);
 	}
 
 	Application::~Application()
@@ -19,13 +19,14 @@ namespace UiEngine
 		{
 			m_Window->OnUpdate();
 			OnUpdate();
+			m_Window->OnLastUpdate();
 		}
 	}
 
-	void Application::Init()
+	void Application::Init(const WindowProps& props)
 	{
 		std::cout << "Hello From Engine" << std::endl;
-		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window = std::unique_ptr<Window>(Window::Create(props));
 	}
 
 	void Application::ShutDown()
