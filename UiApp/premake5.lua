@@ -15,7 +15,7 @@ project "UiApp"
 	{
 		"%{wks.location}/UiEngine/src",
 		"%{wks.location}/UiEngine/vendor/GLFW/include",
-		"%{wks.location}/UiEngine/vendor/imgui",
+		"%{wks.location}/UiEngine/vendor/imgui"
 	}
 
 	links

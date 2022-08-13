@@ -1,5 +1,4 @@
 #include "UiEngine.h"
-
 #include "UiScreens.h"
 
 class UiApp : public UiEngine::Application

@@ -7,7 +7,6 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "imgui.h"
 
 namespace UiEngine
 {

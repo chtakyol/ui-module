@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Core.h"
 #include <string>
+
+#include "Core.h"
 
 namespace UiEngine
 {

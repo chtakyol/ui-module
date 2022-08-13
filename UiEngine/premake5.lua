@@ -17,7 +17,8 @@ project "UiEngine"
 	{
 		"src",
 		"vendor/GLFW/include",
-		"%{IncludeDir.imgui}"
+		"vendor/imgui",
+		"vendor/stb_image"
 	}
 
 	links

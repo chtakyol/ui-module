@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+#include "UiEngine.h"
 #include "imgui.h"
 
 class UiScreens
@@ -12,6 +13,7 @@ public:
 private:
 	void MainScreen();
 	void TestGuideScreen();
+	void TestProgressScreen();
 
 	int screenSelection = 0;
 

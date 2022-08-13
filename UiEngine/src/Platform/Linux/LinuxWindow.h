@@ -17,6 +17,7 @@ namespace UiEngine
 		virtual ~LinuxWindow();
 
 		void OnUpdate() override;
+		void OnLastUpdate() override;
 		inline unsigned int GetWidth() const override { return m_Data.Width; }
 		inline unsigned int GetHeigth() const override { return m_Data.Height; }
 
