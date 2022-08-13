@@ -1,9 +1,10 @@
 #include "UiEngine.h"
+#include "UiScreens.h"
 
 class UiApp : public UiEngine::Application
 {
 public:
-    UiApp()
+    UiApp(UiEngine::WindowProps& props): Application(props)
     {
         std::cout << "Hello From App" << std::endl;
     }
@@ -15,13 +16,22 @@ public:
 
     void OnUpdate() override
     {
-        //std::cout << "Loop" << std::endl;
+        uiScreens.RenderUi();
     }
+
+private:
+    UiScreens uiScreens;
+    UiEngine::WindowProps m_props;
 };
 
 int main()
 {
-    UiApp* ui = new UiApp();
+    UiEngine::WindowProps props;
+    props.Title = "UiAnalysis";
+    props.Width = 800;
+    props.Height = 480;
+
+    UiApp* ui = new UiApp(props);
     ui->Run();
     ui->OnUpdate();
     delete(ui);

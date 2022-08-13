@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Core.h"
 #include <string>
+
+#include "Core.h"
 
 namespace UiEngine
 {
@@ -27,9 +28,11 @@ namespace UiEngine
 	public:
 		virtual ~Window() {};
 		virtual void OnUpdate() = 0;
+		virtual void OnLastUpdate() = 0;
+
 		virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeigth() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Window* Create(const WindowProps& props);
 	};
 }

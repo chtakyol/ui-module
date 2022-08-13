@@ -1,5 +1,5 @@
 project "UiEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "off"
@@ -17,7 +17,8 @@ project "UiEngine"
 	{
 		"src",
 		"vendor/GLFW/include",
-		"%{IncludeDir.imgui}"
+		"vendor/imgui",
+		"vendor/stb_image"
 	}
 
 	links
@@ -40,11 +41,6 @@ project "UiEngine"
 		{
 			"UI_PLATFORM_WINDOWS",
 			"UI_BUILD_DLL"
-		}
-
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/UiApp")
 		}
 
 	filter "system:linux"

@@ -79,9 +79,10 @@ namespace UiEngine
 
 		ImGui::DockSpace(dockSpaceId, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_PassthruCentralNode);
 		ImGui::End();
+	}
 
-		ImGui::ShowDemoWindow();
-
+	void LinuxWindow::OnLastUpdate()
+	{
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
