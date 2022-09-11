@@ -7,3 +7,6 @@ Changelog added.
 * GLFW added as submodule
 * Platform spesific window class generated with inheritance
 * Linux-windows project generation and run shortcuts added into scripts folder
+
+## 13.08.2022 - Multi Platform Support
+* Prepared ui system for basic input and showing images.
