@@ -38,7 +38,7 @@ project "UiApp"
 		staticruntime "On"
 		systemversion "latest"
 
-        links { "GLFW", "Xrandr", "Xi", "GLU", "GL", "X11", "dl", "pthread", "stdc++fs" }
+        links { "GLFW", "imgui", "Xrandr", "Xi", "GLU", "GL", "X11", "dl", "pthread", "stdc++fs" }
         defines { "_X11", "UI_PLATFORM_LINUX" }
 
 	filter "configurations:Debug"

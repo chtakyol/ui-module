@@ -29,15 +29,15 @@ namespace UiEngine
 			s_GLFWInitialized = true;
 		}
 
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE);
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 
-		const char* glsl_version = "#version 330";
+		const char* glsl_version = "#version 110 es";
 		ImGui::CreateContext();
 		ImGui::StyleColorsDark();
 
