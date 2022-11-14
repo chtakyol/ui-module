@@ -37,7 +37,7 @@ namespace UiEngine
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 
-		const char* glsl_version = "#version 110 es";
+		const char* glsl_version = "#version 100";
 		ImGui::CreateContext();
 		ImGui::StyleColorsDark();
 
