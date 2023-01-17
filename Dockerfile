@@ -32,13 +32,9 @@ WORKDIR /
 
 # Build ui-module
 
-# Currently we are clonning
-
-# RUN git clone --recursive https://github.com/220N334/ui-module
-
-COPY ui-module .
-
 WORKDIR ui-module
+
+COPY . .
 
 RUN premake5 gmake
 
