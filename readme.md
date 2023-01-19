@@ -5,6 +5,26 @@
 ## Or run with Docker
 * Use this command to run with docker
 
+Install these libraries
+```sudo apt-get update```
+```sudo apt-get install xserver-xorg-core xinit xterm```
+
+Install docker
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker pi
+```
+
+Start xserver (on host machine)
+```startx```
+
+Change following line with current system cookie 
+
+```RUN xauth add raspberrypi/unix:0  MIT-MAGIC-COOKIE-1 7a8a3650df58de6c6f6b9dfc2d4f623e```
+
+(get current system cookie with ```xauth list```)
+
 Build
 ```docker build -t ui-module .```
 
